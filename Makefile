@@ -1,5 +1,5 @@
 CXXFLAGS = -std=c++11
-LIBS = `pkg-config --libs --cflags egl gl opencv`
+LIBS = `pkg-config --libs --cflags egl gl opencv4`
 
 egl_opengl_test: egl_opengl_test.cpp
 	g++ $(CXXFLAGS) $(LIBS) -o $@ $<
