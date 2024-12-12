@@ -53,6 +53,34 @@ using namespace std;
 
 
 
+
+bool isGlextSupported(const char extension[])
+{
+	GLubyte *where, *terminator;
+
+	// Extension names should not have spaces.
+	where = (GLubyte*) strchr(extension, ' ');
+	if (where || extension[0] == '\0') return false;
+
+	const GLubyte* extensions = glGetString(GL_EXTENSIONS);
+	if (!extensions) return false;  //glGetString did not return a string
+
+	// It takes a bit of care to be fool-proof about parsing the
+	// OpenGL extensions string. Don't be fooled by sub-strings, etc.
+	const GLubyte* start = extensions;
+	for (;;)
+	{
+		where = (GLubyte*)strstr((const char*)start, extension);
+		if (!where)	return false;
+		terminator = where + strlen(extension);
+		if ((where == start || *(where - 1) == ' ') && (*terminator == ' ' || *terminator == '\0'))
+			return true;
+		start = terminator;
+	}
+}
+
+
+
 /*
  *	Converting character into a constant string in the precompiling stage.
  */
@@ -369,7 +397,7 @@ int TestOpenGLCapabilities() {
 			const ExtensionEntry &extension = extensionList[i];
 
 			// Check if supported
-			if (glewIsExtensionSupported(extension.name.c_str())) {
+			if (isGlextSupported(extension.name.c_str())) {
 
 				/*	*/
 				std::cout << extension.name << std::endl;
