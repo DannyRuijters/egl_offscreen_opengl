@@ -457,7 +457,8 @@ int TestOpenGLCapabilities() {
 		}
 
 	} catch (const std::exception &ex) {
-		std::cerr << cxxexcept::getStackMessage(ex) << std::endl;
+		//std::cerr << cxxexcept::getStackMessage(ex) << std::endl;
+		std::cerr << ex.what() << std::endl;
 		return EXIT_FAILURE;
 	}
 
