@@ -28,6 +28,7 @@
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
+#include <map>
 
 /*
  * OpenCV for saving the render target as an image file.
