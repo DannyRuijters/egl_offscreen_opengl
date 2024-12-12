@@ -199,7 +199,6 @@ std::vector<ExtensionEntry> extensionList = {
 	  GLIF_MACRO(GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_ARB)},
 	 {},
 	 {}},
-	{"GL_ANGLE_framebuffer_multisample", {GLIF_MACRO(GL_MAX_SAMPLES_ANGLE_EXT}, {}, {}},
 	{"GL_ARB_ES2_compatibility",
 	 {GLIF_MACRO(GL_MAX_VERTEX_UNIFORM_VECTORS), GLIF_MACRO(GL_MAX_VARYING_VECTORS),
 	  GLIF_MACRO(GL_MAX_FRAGMENT_UNIFORM_VECTORS)},
