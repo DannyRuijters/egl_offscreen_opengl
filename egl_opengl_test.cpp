@@ -31,6 +31,7 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <string.h>
 
 /*
  * OpenCV for saving the render target as an image file.
