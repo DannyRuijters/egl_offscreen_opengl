@@ -2,7 +2,7 @@ CXXFLAGS = -std=c++11
 LIBS = `pkg-config --libs --cflags egl gl`
 
 egl_opengl_test: egl_opengl_test.cpp
-	g++ -o $@ $< $(CXXFLAGS) $(LIBS)
+	g++ $(CXXFLAGS) -o $@ $< $(LIBS)
 
 test: egl_opengl_test
 	./egl_opengl_test
