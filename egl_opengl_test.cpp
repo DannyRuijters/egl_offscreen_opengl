@@ -393,6 +393,8 @@ int TestOpenGLCapabilities() {
 		std::cout << "VERSION: " << glGetString(GL_VERSION) << std::endl;
 		std::cout << "SHADING_LANGUAGE_VERSION: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 		std::cout << std::endl;
+		std::cout << "GL_EXTENSIONS: " << glGetString(GL_EXTENSIONS) << std::endl;
+		std::cout << std::endl;
 		/*	*/
 		for (size_t i = 0; i < extensionList.size(); i++) {
 			const ExtensionEntry &extension = extensionList[i];
